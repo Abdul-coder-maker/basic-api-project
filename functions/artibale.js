@@ -19,5 +19,10 @@ exports.handler = async (event, context, callback) => {
       statusCode: 200,
       body: JSON.stringify(products),
     };
-  } catch (error) {}
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error }),
+    };
+  }
 };
